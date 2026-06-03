@@ -1,0 +1,1 @@
+# kato8-newsletter-api
