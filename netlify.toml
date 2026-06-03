@@ -1,0 +1,24 @@
+# Netlify config — functions-only deploy. No static build; `publish` points
+# at `public/` only because Netlify wants something to upload.
+
+[build]
+  command = "echo 'no build step'"
+  publish = "public"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# Friendly public paths. Browsers/curl can hit /signup and /health directly
+# instead of /.netlify/functions/<name>.
+[[redirects]]
+  from = "/signup"
+  to = "/.netlify/functions/signup"
+  status = 200
+  force = true
+
+[[redirects]]
+  from = "/health"
+  to = "/.netlify/functions/health"
+  status = 200
+  force = true
