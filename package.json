@@ -1,0 +1,17 @@
+{
+  "name": "kato8-newsletter-api",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Netlify Functions backend for Kato.8 newsletter signups.",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "netlify dev",
+    "migrate": "node --env-file=.env scripts/migrate.mjs"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}
